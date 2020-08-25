@@ -1,0 +1,15 @@
+﻿/* the style for the table headers */
+.gridview th
+{
+    font-size: large;
+    font-weight: bold;
+    color: Navy;
+    border: 1px solid black;
+    padding: 8px;
+}
+/* the style for the normal table cells */
+.gridview td
+{
+    padding: 8px;
+    border: 1px solid black;
+}

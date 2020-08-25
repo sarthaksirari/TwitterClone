@@ -1,0 +1,115 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="WebApplication11.Site1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Master.css" rel="stylesheet" />
+    <title></title>
+
+    <script>
+        function funfordefautenterkey1(btn, event) {
+            if (event.keyCode == 13) {
+                {
+                    alert('enter');
+                    event.returnValue = false;
+                    event.cancel = true;
+                    btn.click();
+                }
+            }
+        }
+
+   </script>
+
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <form id="form1" runat="server">
+      <div class="header">
+        <div class="logo">
+          <h1><a href="Home.aspx"><span>Twitter</span>Clone</a></h1>
+        </div>
+        <div class="search">
+        <span><asp:TextBox ID="search" placeholder="Search" runat="server"></asp:TextBox>
+<%--          <asp:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="search" MinimumPrefixLength="2" EnableCaching="true" CompletionSetCount="1" CompletionInterval="1000"  ServiceMethod="GetUserid" ></asp:AutoCompleteExtender>--%>
+          <asp:ImageButton ID="SearchButton" runat="server" class="btn" ImageUrl="~/images/search.jpg" OnClick="SearchButton_Click" Height="29px"/>
+        </span>
+      <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="Home.aspx">Home</a></li>
+          <li><a href="Profile.aspx">Profile</a></li>
+          <li><a href="BrowseUsers.aspx">Browse Users</a></li>
+          <li><a href="EditProfile.aspx">Edit Profile</a></li>
+          <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Sign Out</asp:LinkButton></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+    </div>
+    <asp:ContentPlaceHolder ID="CoverPic" runat="server"></asp:ContentPlaceHolder>
+    <div class="content">
+      <div class="content_bg">
+        <div class="mainbar">
+          <div class="article">
+            <asp:ContentPlaceHolder ID="NewTweetBox" runat="server">
+                <p>
+                    &nbsp;</p>
+              </asp:ContentPlaceHolder>
+              <br />
+              <br />
+            <asp:ContentPlaceHolder ID="PageBody" runat="server">
+                <p>
+                    &nbsp;</p>
+              </asp:ContentPlaceHolder>
+          </div>
+        </div>
+        
+        <div class="sidebar">
+          <div class="gadget">
+            <h2 class="star">
+              <span>
+                <asp:ImageButton class="profilepic" ID="ProfilePic" runat="server" Height="175px" Width="175px" />
+                <br />
+                <asp:Label ID="FullName" runat="server" Font-Bold="True" Font-Size="26px"></asp:Label>
+                  <br />
+                <asp:Label ID="UserName" runat="server" Font-Size="16px"></asp:Label>
+              </span></h2>
+              <p class="star">
+                  &nbsp;</p>
+              <p class="star">
+                  &nbsp;</p>
+              <p class="star">
+                  &nbsp;</p>
+              <p class="star">
+                  &nbsp;</p>
+            <p class="star">&nbsp;</p>
+              <p class="star">&nbsp;</p>
+              <p class="star">&nbsp;</p>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><asp:HyperLink ID="TweetsLink" runat="server" NavigateUrl="Profile.aspx"></asp:HyperLink></li>
+              <li><asp:HyperLink ID="FollowingLink" runat="server" NavigateUrl="Following.aspx"></asp:HyperLink></li>
+              <li><asp:HyperLink ID="FollowersLink" runat="server" NavigateUrl="Follower.aspx"></asp:HyperLink></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright <a href="Home.aspx">TwitterClone</a></p>
+    <p class="rf">Layout by <a href="http://www.facebook.com/ssirari">Sarthak Sirari</a></p>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
